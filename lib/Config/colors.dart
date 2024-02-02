@@ -13,4 +13,3 @@ const containerColor = Color(0xffFFFFFF);
 //Text Color
 const primaryTextColor = Color(0xffFFFFFF);
 const secondryTextColor = Color(0xff246AFE);
-const textColor = Color(0xff8C8C8C);

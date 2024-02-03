@@ -1,38 +1,32 @@
+import 'package:bmi/Config/colors.dart';
+import 'package:bmi/Config/fonts.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
-  final TextStyle style;
-  final double width;
-  final double height;
-  final Color color;
   const CustomButton({
     super.key,
     required this.onPressed,
-    required this.style,
     required this.title,
-    required this.height,
-    required this.width,
-    required this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: width,
-      height: height,
-      child: TextButton(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(color),
-          shape: MaterialStateProperty.all(RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          )),
+    return InkWell(
+      onTap: onPressed,
+      child: Container(
+        width: 380,
+        height: 60,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: primaryBtnColor,
         ),
-        onPressed: onPressed,
-        child: Text(
-          title,
-          style: style,
+        child: Center(
+          child: Text(
+            title,
+            style: btnTextStyle,
+          ),
         ),
       ),
     );

@@ -14,7 +14,7 @@ TextStyle primaryStyle = GoogleFonts.oswald(
   textStyle: const TextStyle(
     color: Colors.black,
     fontWeight: FontWeight.w600,
-    fontSize: 24,
+    fontSize: 28,
   ),
 );
 

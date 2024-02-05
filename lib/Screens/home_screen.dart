@@ -27,16 +27,13 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 109, left: 25),
+            padding: const EdgeInsets.only(top: 80, left: 25),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Welcome ",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w400,
-                  ),
+                  style: myStyle,
                 ),
                 Text(
                   "BMI Calculator",

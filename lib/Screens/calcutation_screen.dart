@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:bmi/Components/button.dart';
-import 'package:bmi/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../Components/gauge.dart';
@@ -68,10 +67,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
             ),
             CustomButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) => const HomeScreen())));
+                Navigator.pop(context);
               },
               title: "Again Calculate",
             ),
@@ -87,6 +83,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
   }
 
   String getBMIStatus(double bmi, String gender) {
+    //print("$gender");
     if (gender == 'Male') {
       if (bmi < 18) {
         return 'Under weight Male';

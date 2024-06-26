@@ -15,6 +15,14 @@ class RadioButton extends StatefulWidget {
 
 class _RadioButtonState extends State<RadioButton> {
   String? gender;
+
+  void _handleGenderChange(String? value) {
+    setState(() {
+      gender = value;
+    });
+    widget.onGenderChange?.call(gender!);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -32,21 +40,14 @@ class _RadioButtonState extends State<RadioButton> {
               Radio(
                 value: "Male",
                 groupValue: gender,
-                onChanged: (value) {
-                  setState(() {
-                    gender = value;
-                    widget.onGenderChange?.call(gender!);
-                  });
-                },
+                onChanged: _handleGenderChange,
                 activeColor: Colors.white,
-                fillColor: MaterialStateProperty.all(Colors.white),
-                overlayColor: MaterialStateProperty.all(Colors.white),
+                fillColor: WidgetStateProperty.all(Colors.white),
+                overlayColor: WidgetStateProperty.all(Colors.white),
               ),
               GestureDetector(
                 onTap: () {
-                  setState(() {
-                    gender = "Male";
-                  });
+                  _handleGenderChange("Male");
                 },
                 child: Text(
                   "Male",
@@ -68,21 +69,14 @@ class _RadioButtonState extends State<RadioButton> {
               Radio(
                 value: "Female",
                 groupValue: gender,
-                onChanged: (value) {
-                  setState(() {
-                    gender = value;
-                  });
-                },
+                onChanged: _handleGenderChange,
                 activeColor: secondryTextColor,
-                fillColor: MaterialStateProperty.all(secondryTextColor),
-                overlayColor: MaterialStateProperty.all(secondryTextColor),
+                fillColor: WidgetStateProperty.all(secondryTextColor),
+                overlayColor: WidgetStateProperty.all(secondryTextColor),
               ),
               GestureDetector(
                 onTap: () {
-                  setState(() {
-                    gender = "Female";
-                    widget.onGenderChange?.call(gender!);
-                  });
+                  _handleGenderChange("Female");
                 },
                 child: Text(
                   "Female",

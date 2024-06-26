@@ -41,6 +41,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
           style: myStyle,
         ),
         centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -83,7 +84,7 @@ class _CalculationScreenState extends State<CalculationScreen> {
   }
 
   String getBMIStatus(double bmi, String gender) {
-    //print("$gender");
+    print("gender == $gender");
     if (gender == 'Male') {
       if (bmi < 18) {
         return 'Under weight Male';

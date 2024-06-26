@@ -131,20 +131,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   height: 30,
                 ),
                 CustomButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CalculationScreen(
-                            age: age,
-                            gender: gender,
-                            height: height,
-                            weight: weight,
-                          ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CalculationScreen(
+                          age: age,
+                          gender: gender,
+                          height: height,
+                          weight: weight,
                         ),
-                      );
-                    },
-                    title: "Calculate")
+                      ),
+                    );
+                  },
+                  title: "Calculate",
+                ),
               ],
             ),
           ),

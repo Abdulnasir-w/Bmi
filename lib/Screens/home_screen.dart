@@ -132,17 +132,49 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 CustomButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CalculationScreen(
-                          age: age,
-                          gender: gender,
-                          height: height,
-                          weight: weight,
+                    if (gender.isEmpty) {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: const Center(
+                          child: Text(
+                            'Please Select a Gender.',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
+                          ),
                         ),
-                      ),
-                    );
+                        duration: const Duration(seconds: 2),
+                        backgroundColor: Colors.redAccent,
+                        elevation: 4,
+                        behavior: SnackBarBehavior.floating,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust border radius as needed
+                          side: const BorderSide(
+                            color: Colors.grey, // Border color
+                            width: 1.0, // Border width
+                          ),
+                        ),
+                      ));
+                    } else {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CalculationScreen(
+                            age: age,
+                            gender: gender,
+                            height: height,
+                            weight: weight,
+                          ),
+                        ),
+                      ).then((_) {
+                        setState(() {
+                          gender = '';
+                          height = 150.0;
+                          weight = 50;
+                          age = 18;
+                        });
+                      });
+                    }
                   },
                   title: "Calculate",
                 ),

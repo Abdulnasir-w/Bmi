@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:bmi/Components/button.dart';
+import 'package:bmi/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../Components/gauge.dart';
@@ -68,7 +69,8 @@ class _CalculationScreenState extends State<CalculationScreen> {
             ),
             CustomButton(
               onPressed: () {
-                Navigator.pop(context);
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
               },
               title: "Again Calculate",
             ),

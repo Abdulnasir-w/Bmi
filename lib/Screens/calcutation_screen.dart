@@ -69,8 +69,10 @@ class _CalculationScreenState extends State<CalculationScreen> {
             ),
             CustomButton(
               onPressed: () {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HomeScreen()));
               },
               title: "Again Calculate",
             ),
@@ -86,7 +88,6 @@ class _CalculationScreenState extends State<CalculationScreen> {
   }
 
   String getBMIStatus(double bmi, String gender) {
-    print("gender == $gender");
     if (gender == 'Male') {
       if (bmi < 18) {
         return 'Under weight Male';

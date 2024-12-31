@@ -85,12 +85,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 10,
                                 ),
                                 Expanded(
-                                  child: HeightSelector(
-                                    onHeightChanged: (newHeight) {
-                                      setState(() {
-                                        height = newHeight;
-                                      });
-                                    },
+                                  child: SizedBox(
+                                    width: 150,
+                                    child: HeightSelector(
+                                      onHeightChanged: (newHeight) {
+                                        setState(() {
+                                          height = newHeight;
+                                        });
+                                      },
+                                    ),
                                   ),
                                 ),
                               ],
